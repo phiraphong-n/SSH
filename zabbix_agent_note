@@ -1,0 +1,39 @@
+Step 1: Add the Zabbix Repository
+First, add the Zabbix repository to your system. Replace 6.0 with your desired Zabbix version.
+
+wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2+ubuntu24.04_all.deb
+dpkg -i zabbix-release_7.0-2+ubuntu24.04_all.deb
+apt update
+apt upgrade
+
+======================
+
+Step 2: Install Zabbix Agent
+Once the repository is added, install the Zabbix agent:
+
+apt install zabbix-agent
+
+** If have error dependencies use
+$ aptitude install zabbix-agent
+
+===========================
+
+Step 3: Configure Zabbix Agent
+You need to edit the Zabbix agent configuration file to point to your Zabbix server.
+
+nano /etc/zabbix/zabbix_agentd.conf
+
+Change the following parameters:
+
+Server=ZABBIX_SERVER_IP (Replace ZABBIX_SERVER_IP with the IP address of your Zabbix server)
+ServerActive=ZABBIX_SERVER_IP
+Hostname=AGENT_HOSTNAME (Replace AGENT_HOSTNAME with your agent's hostname)
+
+==========================
+
+Step 4: Start and Enable Zabbix Agent
+Start and enable the Zabbix agent service:
+
+systemctl restart zabbix-agent
+systemctl enable zabbix-agent
+systemctl status zabbix-agent
