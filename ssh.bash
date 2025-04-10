@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Variables
-user='jetsada.c'
-pub_key='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGZzNac8ca0J56brc4r5jzUrTj7DZe+f9IvDO93ruFnO ModelZ'
+user='phiraphong.d'
+pub_key='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL8KGEUW6tE0wVy/fsok3Ix9l78RUMnfD01sBcEKsqL/ phiraphong.d'
 
 # Create a new user with a home directory and bash shell
 useradd -s /bin/bash -m $user
